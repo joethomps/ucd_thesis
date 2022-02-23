@@ -1,0 +1,66 @@
+i## Core latex/pdflatex auxiliary files:
+*.aux
+*.auxlock
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Glossary files:
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.glsdefs
+
+*.pgf-plot.gnuplot
+*.pgf-plot.table
+*.pgf-plot.vrs
+
+*.run.xml
+
+tikzfigures/*
+
+thesis_main.pdf
+chapters/introduction/introduction.pdf
+chapters/wbm_wbc_review/wbm_wbc_review.pdf
+chapters/wbm_improved_uniform/wbm_improved_uniform.pdf
+chapters/wbc_uniform/wbc_uniform.pdf
+chapters/non_uniform_systems/non_uniform_systems.pdf
+chapters/upper_stage/upper_stage.pdf
+chapters/flexible_structure/flexible_structure.pdf
+chapters/conclusions/conclusions.pdf
+
+*.dat
+
+## MATLAB/Simulink files
+*.asv
+*.autosave
+*.slxc
+matlab/slprj/*
+matlabSimulink/slprj/*

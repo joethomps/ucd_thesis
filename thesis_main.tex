@@ -1,0 +1,130 @@
+% A minimal template for a UCD thesis using the latex report class
+% Original Author: Joseph Thompson, 2019
+% Build this using latexmk: https://mg.readthedocs.io/latexmk.html
+
+% -------- %
+% Preamble %
+% -------- %                                            
+
+\documentclass[11pt, oneside]{report} % set the text size and margins for onesided printing (comment this line and uncomment line below for twoside)
+%\documentclass[11pt, twoside]{report}
+
+\usepackage[utf8]{inputenc} % Text encoding
+\usepackage[a4paper,left=20mm,right=20mm,top=20mm,bottom=20mm,bindingoffset=10mm]{geometry} % Paper size and margins according to UCD guidelines
+
+% Uncomment to use Times New Roman font
+% \usepackage{Times}
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,amsbsy,amsmath} % For properly typesetting equations
+
+\usepackage{graphicx} % Images
+
+\usepackage{xcolor} % Colours
+\definecolor{lcolor}{rgb}{0,0,0} % Colour in RGB to use for hyperlinks
+\providecommand\phantomsection{}
+\usepackage[colorlinks=true,allcolors=lcolor]{hyperref} % hyperlinks
+
+\usepackage[style=numeric]{biblatex} % Citation style - see biblatex manual for more info
+\addbibresource{./thesis_refs.bib} % Specify bib file(s)
+\usepackage[capitalise]{cleveref} % clever referencing - use \cref in the text
+
+\setlength{\parindent}{0pt} % Make paragraphs skip and not indent
+\setlength{\parskip}{6pt}
+
+% Uncomment one of the following lines to set the line spacing
+%\usepackage[singlespacing]{setspace}
+\usepackage[onehalfspacing]{setspace}
+%\usepackage[doublespacing]{setspace}
+
+\usepackage[margin=10pt,font={small,singlespacing},labelfont=bf]{caption}
+\usepackage{subcaption} % for subfigures
+\usepackage{pdflscape} % allow landscape pages
+\usepackage{longtable} % multipage tables
+
+\usepackage[acronym,toc]{glossaries}
+\makeglossaries
+
+\input{./other/acronyms.tex} % read in the acronyms
+
+% -------------------------- %
+% Start of the main document %
+% -------------------------- %
+
+\begin{document} 
+
+% ----------- %
+% Frontmatter %
+% ----------- %
+
+\input{frontmatter/title_page.tex} % Title page
+\cleardoublepage
+
+\pagenumbering{roman} % Roman page numbering for frontmatter
+\tableofcontents % TOC
+\cleardoublepage
+
+\chapter*{Abstract} % Abstract
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\input{frontmatter/abstract.tex}
+\cleardoublepage
+
+\chapter*{Declaration} % Declaration according to UCD guidelines
+\phantomsection
+\addcontentsline{toc}{chapter}{Declaration}
+I hereby certify that the submitted work is my own work, was completed
+while registered as a candidate for the degree stated on the Title Page, and I have not obtained a
+degree elsewhere on the basis of the research presented in this submitted work
+\cleardoublepage
+
+\chapter*{Acknowledgements} % Acknowledgements
+\phantomsection
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{frontmatter/acknowledgements.tex}
+\cleardoublepage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\cleardoublepage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\cleardoublepage
+
+\phantomsection
+\printglossary[title={List of Abbreviations},type=\acronymtype,style=listdotted]
+\cleardoublepage
+
+% ---------------------- %
+% Chapters of the thesis %
+% ---------------------- %
+
+\pagenumbering{arabic} % change to arabic page numbers
+
+\chapter{The First Chapter Title} \label{chap:first_chap} % chapter title
+\input{chapters/chapter_1/chapter_1.tex} % text of the chapter in a separate file 
+\cleardoublepage
+
+% add more here by copying the 3 lines above ......
+
+% ---------------------- %
+%      Appendices        %
+% ---------------------- %
+
+\appendix
+
+\cleardoublepage
+\chapter{Title of an Appendix} \label{app:an_appendix}
+\input{appendices/appendix_1.tex}
+
+% ---------------------- %
+%      Bibliography      %
+% ---------------------- %
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography[]
+
+\end{document}
